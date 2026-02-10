@@ -29,7 +29,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         credentials: 'include',
       })
       setIsAuthenticated(response.ok)
-    } catch (error) {
+    } catch {
       setIsAuthenticated(false)
     } finally {
       setIsLoading(false)

@@ -12,6 +12,14 @@ import type { PostFrontmatter } from "@/types/post"
 const DRAFT_KEY = "editor-draft"
 
 export default function EditorPage() {
+  return (
+    <React.Suspense fallback={<div className="container py-10 flex items-center justify-center min-h-screen"><p>Loading...</p></div>}>
+      <EditorContent />
+    </React.Suspense>
+  )
+}
+
+function EditorContent() {
   const searchParams = useSearchParams()
   const router = useRouter()
   const { isAuthenticated, isLoading: authLoading } = useAuth()
