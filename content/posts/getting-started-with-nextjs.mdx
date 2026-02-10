@@ -1,0 +1,85 @@
+---
+title: "Getting Started with Next.js 14"
+date: "2024-02-08"
+excerpt: "A comprehensive guide to getting started with Next.js 14 and the new App Router. Learn the basics and build your first application."
+author: "Blog Author"
+tags: ["nextjs", "react", "tutorial", "webdev"]
+featured: false
+draft: false
+---
+
+# Getting Started with Next.js 14
+
+Next.js has revolutionized the way we build React applications. With version 14 and the App Router, it's even better. Let's dive in!
+
+## Why Next.js?
+
+Next.js provides several key benefits:
+
+- **Server-Side Rendering (SSR)** - Better SEO and performance
+- **Static Site Generation (SSG)** - Pre-render pages at build time
+- **API Routes** - Build your backend with Next.js
+- **File-based Routing** - Simple and intuitive routing
+- **Built-in Optimization** - Image, font, and script optimization
+
+## Installation
+
+Getting started is easy:
+
+```bash
+npx create-next-app@latest my-app
+cd my-app
+npm run dev
+```
+
+## Project Structure
+
+Here's what a typical Next.js 14 project looks like:
+
+```
+my-app/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── about/
+│       └── page.tsx
+├── public/
+├── package.json
+└── next.config.js
+```
+
+## Creating Your First Page
+
+Creating a page is as simple as creating a file:
+
+```typescript
+// app/about/page.tsx
+export default function AboutPage() {
+  return (
+    <div>
+      <h1>About Us</h1>
+      <p>Welcome to our about page!</p>
+    </div>
+  )
+}
+```
+
+## Server Components
+
+Next.js 14 introduces React Server Components by default:
+
+```typescript
+async function getData() {
+  const res = await fetch('https://api.example.com/data')
+  return res.json()
+}
+
+export default async function Page() {
+  const data = await getData()
+  return <div>{data.title}</div>
+}
+```
+
+## Conclusion
+
+Next.js 14 with the App Router brings powerful features to React developers. Start building today!
